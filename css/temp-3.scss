@@ -62,9 +62,19 @@ body {
     align-items: center;
     .image {
       img {
+        position: relative;
         width: 550px;
         margin-left: 350px;
-        // animation: up-and-down 5s linear infinite;
+        animation: up-and-down 5s linear infinite;
+      }
+    }
+    @keyframes up-and-down {
+      0%,
+      100% {
+        top: 0;
+      }
+      50% {
+        top: -50px;
       }
     }
     .desc {
@@ -72,7 +82,6 @@ body {
       margin-top: 30px;
       line-height: 2em;
       margin-left: 106px;
-      margin-top: 25px;
       h1 {
         font-size: 26px;
       }
@@ -91,11 +100,11 @@ body {
     width: 185px;
     margin: 0 auto;
     margin-top: 10%;
-    transition: 0.5s;
     &:hover {
       color: white;
       background-color: #2196f3;
       border: 1px solid #2196f3;
+      transition: 0.5s;
     }
   }
   .contanir {
@@ -109,10 +118,7 @@ body {
       margin-top: 5%;
       position: relative;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
       overflow: hidden;
-      flex-wrap: 1;
     }
     .desc {
       bottom: 0;
@@ -141,7 +147,6 @@ body {
       padding-top: 20px;
       border-top: 1px solid #e6e6e7;
       display: flex;
-      justify-content: space-between;
     }
   }
 }
@@ -213,6 +218,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     padding: 25px;
+    margin-top: 5%;
     :nth-child(3) {
       &:hover {
         .more {
@@ -293,6 +299,20 @@ body {
           border-width: 170px 410px 170px 0;
         }
       }
+      :nth-child(1) {
+        .overlay {
+          background-color: rgba(255, 56, 56, 0.53);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
       &:nth-child(2) {
         .overlay {
           background-color: rgba(0, 150, 136, 0.6) !important;
@@ -325,18 +345,6 @@ body {
           border-width: 0px 0px 170px 500px;
           border-color: transparent transparent white transparent;
           transition: 0.3s;
-        }
-        .overlay {
-          background-color: rgba(255, 56, 56, 0.53);
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-        img {
-          width: 100%;
-          height: 100%;
         }
       }
       .desc {
@@ -438,11 +446,11 @@ body {
         top: -50px;
         width: 100px;
         height: 100px;
-        border-radius: 50%;
-        border: 10px solid #ececec;
         img {
           width: 100%;
           height: 100%;
+          border-radius: 50%;
+          border: 10px solid #ececec;
         }
       }
       h3 {
